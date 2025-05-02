@@ -1,68 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Basic Webpage</title>
+    <title>{name}'s Portal</title>
     <style>
-        body {
+        body {{
+            background-color: {color};
             font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        header {
-            background-color: #333;
-            color: white;
-            padding: 15px 0;
-            text-align: center;
-        }
-        nav {
-            text-align: center;
-            margin: 20px 0;
-        }
-        nav a {
-            margin: 0 15px;
             color: #333;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        .content {
-            padding: 20px;
             text-align: center;
-        }
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 10px;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
-        }
+            padding: 50px;
+        }}
+        img {{
+            max-width: 300px;
+        }}
+        button {{
+            padding: 10px 20px;
+            margin-top: 20px;
+            font-size: 16px;
+        }}
     </style>
 </head>
 <body>
-
-<header>
-    <h1>Welcome to My Basic Webpage</h1>
-</header>
-
-<nav>
-    <a href="#">Home</a>
-    <a href="#">About</a>
-    <a href="#">Services</a>
-    <a href="#">Contact</a>
-</nav>
-
-<div class="content">
-    <h2>About This Page</h2>
-    <p>This is a simple webpage created using basic HTML and CSS. It's designed to be easy to understand and modify.</p>
-</div>
-
-<footer>
-    <p>&copy; 2025 My Webpage</p>
-</footer>
-
+    <h1>Hello, {name}!</h1>
+    <p>{message}</p>
+    <img src="{image_url}" alt="Mood Image">
+    <p><strong>Portal Word: MAGIC</strong></p>
+    <button onclick="showFact()">Show Fun Fact</button>
+    <p id="fact"></p>
+    <script>
+        const facts = [
+            "Honey never spoils.",
+            "Bananas are berries, but strawberries aren't.",
+            "Octopuses have three hearts.",
+            "A group of flamingos is called a 'flamboyance'."
+        ];
+        function showFact() {{
+            const fact = facts[Math.floor(Math.random() * facts.length)];
+            document.getElementById('fact').textContent = fact;
+        }}
+    </script>
 </body>
 </html>
+"""
